@@ -15,44 +15,77 @@
 <body>
 
   <main class="main__room">
-    <header class="header">
-    <nav class="nav">
-      <div class="nav__hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-      <img src="./images/logo.svg" alt="Logo of room">
-      <ul class="nav__list__mobile">
-        <li class="nav__list-item">Home</li>
-        <li class="nav__list-item">Shop</li>
-        <li class="nav__list-item">About</li>
-        <li class="nav__list-item">Contact</li>
-      </ul>
-    </nav>
-    </header>
-    Discover innovative ways to decorate
-    We provide unmatched quality, comfort, and style for property owners across the country.
-    Our experts combine form and function in bringing your vision to life. Create a room in your
-    own style with our collection and make your property a reflection of you and what you love.
-    Shop now
-    We are available all across the globe
-    With stores all over the world, it's easy for you to find furniture for your home or place of business.
-    Locally, we’re in most major cities throughout the country. Find the branch nearest you using our
-    store locator. Any questions? Don't hesitate to contact us today.
-    Shop now
-    Manufactured with the best materials
-    Our modern furniture store provide a high level of quality. Our company has invested in advanced technology
-    to ensure that every product is made as perfect and as consistent as possible. With three decades of
-    experience in this industry, we understand what customers want for their home and office.
-    Shop now
-    About our furniture
-    Our multifunctional collection blends design and function to suit your individual taste.
-    Make each room unique, or pick a cohesive theme that best express your interests and what
-    inspires you. Find the furniture pieces you need, from traditional to contemporary styles
-    or anything in between. Product specialists are available to help you create your dream space.
+
     
+    <header class="header">
+    <section class="header__section1">
+      <nav class="nav">
+        <div class="nav__hamburger">
+          <button class="nav__button">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+        <img src="./images/logo.svg" alt="Logo of room">
+        <ul class="nav__list__mobile">
+          <li class="nav__list-item">Home</li>
+          <li class="nav__list-item">Shop</li>
+          <li class="nav__list-item">About</li>
+          <li class="nav__list-item">Contact</li>
+        </ul>
+
+        <ul class="nav__list__desktop">
+          <li class="nav__list-item">Home</li>
+          <li class="nav__list-item">Shop</li>
+          <li class="nav__list-item">About</li>
+          <li class="nav__list-item">Contact</li>
+        </ul>
+      </nav>
+      <div class="toggleButtons">
+        <button class="toggle back"></button>
+        <button class="toggle next"></button>
+      </div>
+    </header>
+
+  </section>
+
+  <section class="header__section2">
+
+    <h1 class="section2__header">Discover innovative ways to decorate</h1>
+
+    <p class="section2__text">
+      We provide unmatched quality, comfort, and style for property owners across the country.
+      Our experts combine form and function in bringing your vision to life. Create a room in your
+      own style with our collection and make your property a reflection of you and what you love.
+    </p>
+
+    <button class="section2__shopnow">Shop now</button>
+
+  </section>
+
+  <section class="header__section3">
+    <img src="./images/image-about-dark.jpg" alt="">
+
+    <div class="section3__info">
+      <h1 class="section3__header">About our furniture</h1>
+      <p class="section3__text">
+        Our multifunctional collection blends design and function to suit your individual taste.
+        Make each room unique, or pick a cohesive theme that best express your interests and what
+        inspires you. Find the furniture pieces you need, from traditional to contemporary styles
+        or anything in between. Product specialists are available to help you create your dream space.
+      </p>
+    </div>
+
+  </section>
+
+  <section class="picture__section4">
+    <img src="./images/image-about-light.jpg" alt="">
+
+  </section>
+   
   </main>
   
+  <script src="./main.js"></script>
 </body>
 </html>

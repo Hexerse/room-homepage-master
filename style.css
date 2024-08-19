@@ -1,124 +1,325 @@
 /*
   1. Use a more-intuitive box-sizing model.
 */
-*, *::before, *::after {
-    box-sizing: border-box;
-  }
-  /*
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/*
     2. Remove default margin
   */
-  * {
-    margin: 0;
-  }
-  /*
+* {
+  margin: 0;
+}
+/*
     Typographic tweaks!
     3. Add accessible line-height
     4. Improve text rendering
   */
-  body {
-    line-height: 1.5;
-    -webkit-font-smoothing: antialiased;
-  }
-  /*
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+/*
     5. Improve media defaults
   */
-  img, picture, video, canvas, svg {
-    display: block;
-    max-width: 100%;
-  }
-  /*
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+/*
     6. Remove built-in form typography styles
   */
-  input, button, textarea, select {
-    font: inherit;
-  }
-  /*
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/*
     7. Avoid text overflows
   */
-  p, h1, h2, h3, h4, h5, h6 {
-    overflow-wrap: break-word;
-  }
-  /*
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+/*
     8. Create a root stacking context
   */
-  #root, #__next {
-    isolation: isolate;
+#root,
+#__next {
+  isolation: isolate;
+}
+
+:root {
+  --clr-Dark-Gray: hsl(0, 0%, 63%);
+  --clr-Black: hsl(0, 0%, 0%);
+  --clr-White: hsl(0, 0%, 100%);
+  --clr-Very-Dark-Gray: hsl(0, 0%, 27%);
+
+  --fw-light: 500;
+  --fw-regular: 600;
+  --fw-bold: 600;
+
+  --ff: "League Spartan", sans-serif;
+}
+
+body {
+  height: 100svh;
+  font-family: var(--ff);
+}
+
+li {
+  cursor: pointer;
+}
+
+.main__room {
+  display: grid;
+  grid-template-rows: repeat(auto-fill, 375px);
+}
+
+.header {
+  background-image: url(./images/mobile-image-hero-1.jpg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: relative;
+  padding: 2rem 1rem;
+  position: relative;
+  transition: ease-in 0.3s;
+}
+
+.background__image2 {
+  background-image: url(./images/mobile-image-hero-2.jpg);
+  transition: ease-in 0.3s;
+}
+
+.background__image3 {
+  background-image: url(./images/mobile-image-hero-3.jpg);
+  transition: ease-in 0.3s;
+}
+
+.nav {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+.nav img {
+  align-self: center;
+}
+
+.nav__button {
+  position: absolute;
+  left: 10%;
+  top: 6%;
+  border: none;
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  z-index: 99;
+}
+
+.nav__button span {
+  display: inline-block;
+  width: 30px;
+  height: 5px;
+  background-color: white;
+  border-radius: 5px;
+  transform: translate(-50%, -50%);
+  transition: 0.3s ease-in;
+  z-index: 98;
+}
+
+.nav__button:hover {
+  cursor: pointer;
+}
+
+.nav__button.active span:nth-child(1) {
+  transform: translate(-10px, 5px) rotate(45deg);
+  background-color: var(--clr-Dark-Gray);
+}
+
+.nav__button.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.nav__button.active span:nth-child(3) {
+  transform: translate(-11px, -10px) rotate(-45deg);
+  background-color: var(--clr-Dark-Gray);
+}
+
+.nav__list__mobile {
+  position: absolute;
+  height: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  background-color: white;
+  width: 100%;
+  font-weight: var(--fw-bold);
+  opacity: 0;
+  top: 0;
+  z-index: 1;
+  transition: ease-in 0.3s;
+}
+
+.nav__list__mobile li {
+  list-style: none;
+  text-transform: lowercase;
+}
+
+.toggleButtons {
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.toggle {
+  border: none;
+  background-color: black;
+  height: 4rem;
+  width: 4rem;
+  transition: ease-in-out 0.3s;
+}
+
+.toggle:hover {
+  background-color: var(--clr-Very-Dark-Gray);
+}
+
+.toggle:hover {
+  cursor: pointer;
+}
+
+.back {
+  background-image: url(./images/icon-angle-left.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.next {
+  background-image: url(./images/icon-angle-right.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* section 2 discover innovative ways to decorate */
+.header__section2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 2rem 1.5rem;
+}
+
+.section2__header {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.section2__text {
+  color: var(--clr-Dark-Gray);
+}
+
+.section2__shopnow {
+  display: flex;
+  align-items: center;
+  border: none;
+  background-color: transparent;
+  align-self: self-start;
+  text-transform: uppercase;
+  letter-spacing: 1rem;
+}
+
+.section2__shopnow:hover {
+  cursor: pointer;
+}
+
+.section2__shopnow::after {
+  content: "";
+  display: inline-block;
+  background-image: url(./images/icon-arrow.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 5rem;
+  height: 1rem;
+}
+
+/* section 3 about our furniture */
+.header__section3 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+}
+
+.section3__info {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.section3__header {
+  align-self: self-start;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  font-size: 1rem;
+}
+
+.section3__text {
+  color: var(--clr-Dark-Gray);
+}
+
+.nav__list__desktop {
+  display: none;
+}
+
+/*
+
+@media (min-width: 500px) {
+  .header {
+    background-image: url(./images/desktop-image-hero-1.jpg);
   }
 
-  :root{
-    --clr-Dark-Gray: hsl(0, 0%, 63%);
-    --clr-Black: hsl(0, 0%, 0%);
-    --clr-White: hsl(0, 0%, 100%);
-    --clr-Very-Dark-Gray: hsl(0, 0%, 27%);
-
-    --fw-light: 500;
-    --fw-regular: 600;
-    --fw-bold: 600;
-
-    --ff:"League Spartan", sans-serif;
+  .background__image2 {
+    background-image: url(./images/desktop-image-hero-2.jpg);
+    transition: ease-in 0.3s;
   }
 
-  body{
-    height: 100svh;
-    font-family: var(--ff);
+  .background__image3 {
+    background-image: url(./images/desktop-image-hero-3.jpg);
+    transition: ease-in 0.3s;
   }
 
-  .main__room{
-    display: grid;
-    grid-template-rows: repeat(auto-fill,375px);
+  .nav__hamburger {
+    display: none;
+  }
+  .nav__list__mobile {
+    display: none;
   }
 
-  header{
-    background-image: url(./images/mobile-image-hero-1.jpg);
-    background-repeat: no-repeat;
-    background-size:contain;
-    position: relative;
-    padding: 2rem 1rem;
+  .nav__list__desktop {
   }
 
-  .background__image2{
-    background-image: url(./images/mobile-image-hero-2.jpg);
-  }
-
-  .background__image3{
-    background-image: url(./images/mobile-image-hero-3.jpg);
-  }
-
-  .nav{
-    display: flex;
-    justify-content: center;
-    gap: 16px;
-  }
-
-  .nav img{
-    align-self: center;
-  }
-
-  .nav__hamburger{
-    height: 1rem;
-  }
-
-  .nav__hamburger span{
-    height: 1rem;
-    width: 1rem;
-    background-color: white;
-    border-radius: 10%;
-  }
-
-  .nav__list__mobile{
-    position: absolute;
-    height: 4rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
-    background-color: white;
-    width: 100%;
-    font-weight: var(--fw-bold);
-    top: -400px;
-  }
-
-  .nav__list__mobile li{
+  .nav__list__desktop li {
     list-style: none;
     text-transform: lowercase;
   }
+}
+*/
